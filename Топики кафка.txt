@@ -1,0 +1,88 @@
+"СУП - АСАП":
+https://confluence.nlmk.com/pages/viewpage.action?pageId=61643614
+
+1. интегральные параметры единицы
+на тестовый: 000-1.l3-sup.db.nlmk.integral-parameters.0 - 12584
+на продуктивный: 000-0.l3-sup.db.nlmk.integral-parameters.0 - 19400
+
+2. не хранимые параметры трендов
+на тестовый: 000-1.l3-sup.db.nlmk.unrecoverable-parameters-trends.0 - 12664
+на продуктивный:  000-0.l3-sup.db.nlmk.unrecoverable-parameters-trends.0 - 19400
+
+----------------------------------------------------------------------------------
+"АСАП - ССМ ПГП":
+https://confluence.nlmk.com/pages/viewpage.action?pageId=62406780
+
+на тестовый - 000-1.l3-apcs.db.nlmk.verification-results.0
+на продуктивный - 000-0.l3-apcs.db.nlmk.verification-results.0
+
+этих топиков нет в kafkaDrop
+
+Гагарин Павел:
+Сообщения пишет АСАП, а читает "ССМ ПГП".
+
+Макаров:
+Тогда вы должны писать через Kafka REST интерфейс в AVRO.
+Сначала пишете на тест, согласуете спецификацию со Скрипником М И,
+ после согласования и наличия теста – предоставляем  доступ на прод.
+
+
+ССМ - АСАП
+есть топик
+000-1.l3-ccm-pgp.db.Attestation-Request.0 - 3 от 2021-04-21
+
+Задание на порезку и отгрузку
+000-1.l3-ccm-pgp.db.szadanie.0 - топик есть тест/прод
+000-0.l3-ccm-pgp.db.szadanie.0 - топик есть прод
+
+Производство ЦГП
+000-1.l3-ccm-pgp.db.nlmk.production.0 топик есть тест
+
+Суточный График Прокатки
+000-1.l3-ccm-pgp.db.sstrsgp.0 топик есть тест
+
+Отгрузка ЦГП
+000-1.l3-ccm-pgp.db.nlmk.shipment.0
+
+Спецификация передачи статуса сертификата в kafka из ССМ ПГП
+000-1.l3-all.db.nlmk.certificate.status.1 топик есть тест 1760
+
+-----------------------------------------------------------------------------------
+АСАП -> PDM Консом ИС АСАП:Микроструктура:
+Нет сведений о топиках в confluence.
+
+Данные только из писем эл. почты:
+
+Из письма Болотова А.Н.:
+ИС АСАП::Микроструктура 
+Адрес топика: 
+http://nl-sd-qpdmweb01.ao.nlmk:8090/0-0.l3-pdm.cdc.sp-microstructure.0  
+Это Kafka REST
+
+В продуктивном кластере нет топика 0-0.l3-pdm.cdc.sp-microstructure.0. Этот топик доступен в dev-кластере
+
+в KafkaDrop: 0-0.l3-pdm.cdc.sp-microstructure.0 - 77
+000-0.l3-pdm.cdc.sp-microstructure.0
+nl-sq-dpltkfk01.ao.nlmk:9092
+
+		   000-1.l3-pdm.cdc.sp-microstructure.0
+NSD_microstructure 000-1.l3-pdm.cdc.sp-microstructure.0 - нет в кафка дроп
+
+NsdAsapChemicalProperties 000-1.l3-pdm.cdc.sp-asap-chemical-properties.0 - есть
+NsdMatchTkNum 000-1.l3-pdm.cdc.sp-match-tk-num.0 - есть
+
+Химический состав по стандартам( NSD_asap_chemical_properties ) 000-1.l3-pdm.cdc.sp-asap-chemical-properties.0
+Соответствие ТК из заказа и ГМ( NSD_match_tk_num ) - 000-1.l3-pdm.cdc.sp-match-tk-num.0 есть
+Соответствие РП из заказа и ГМ( NSD_match_rabplan_num ) - 000-1.l3-pdm.cdc.sp-match-rabplan-num.0
+
+Коэффициент растрескивания( NSD_Pcm ) - 000-1.l3-pdm.cdc.sp-pcm.0
+Физико-механические свойства по стандартам( NSD_asap_mech_properties ) - 000-1.l3-pdm.cdc.asap-mech-properties.0
+Таблица ссылок АСАП для допусков( NSD_asap_tol_links ) - 000-1.l3-pdm.cdc.sp-asap-tol-links.0
+Определение категории по марке стали ГОСТ 4041-2017( NSD_kat_steel_mark_gost4041 ) - 000-1.l3-pdm.cdc.sp-kat-steel-mark-gost4041.0
+Эквиваленты( NSD_equivalents ) - 000-1.l3-pdm.cdc.sp-equivalents.0
+Допуски по толщине( NSD_tol_thick ) - 000-1.l3-pdm.cdc.sp-tol-thick.0
+Допуски по ширине( NSD_tol_width ) - 000-1.l3-pdm.cdc.sp-tol-width.0
+Допуски по длине( NSD_tol_length ) - 000-1.l3-pdm.cdc.sp-tol-length.0
+Допуски по плоскостности( NSD_tol_evenness ) - 000-1.l3-pdm.cdc.sp-tol-evenness.0
+
+
